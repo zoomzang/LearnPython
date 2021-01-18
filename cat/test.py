@@ -1,0 +1,45 @@
+import sys
+import argparse #command line import
+import time
+
+#color = input("please enter a color")
+#print(color)
+#time.sleep(1)
+
+def sample(word):
+    input("say it aint so")
+    time.sleep(1)
+    print("oy")
+    print("ow")
+    print(word)
+
+
+
+print("Hello world")
+
+
+
+# print("hello world")
+# exampleVar = "wombat"
+# exampleMilo = "21"
+# print(exampleVar + exampleMilo)
+# print(" name is " + sys.argv[0])
+print(" parameters " + str(sys.argv))
+# print (" numparam " + str(len(sys.argv)))
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument("square", type=int, help="display the square of a given number")
+parser.add_argument("-v", "--verbose", action="count", help="explicitly outline squaring")
+# parser.add_argument("square", help="display a square of a given number", type=int)
+
+args = parser.parse_args() #parse the arguments after declared
+answer = args.square**2
+
+
+if args.verbose == 2:
+    print("the square of {} is {} ".format(args.square, answer))
+elif args.verbose == 1:
+    print("{} squared is {}".format(args.square,answer))
+else:
+    print(answer)
